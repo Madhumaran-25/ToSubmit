@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "803167929201",
+    "project_id": "cartapp-4ff2c",
+    "storage_bucket": "cartapp-4ff2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803167929201:android:90eed3310e9ff0e38c6cd0",
+        "android_client_info": {
+          "package_name": "com.cartapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803167929201-8gd71niocsf4hngg8qc803rmu5b7u4ko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "803167929201-p256262d41ivi4m2gsgtu5n3m8fuekrq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChoRMHgTIEE1WztZmjcXLL9UUMM-FLNu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803167929201-p256262d41ivi4m2gsgtu5n3m8fuekrq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

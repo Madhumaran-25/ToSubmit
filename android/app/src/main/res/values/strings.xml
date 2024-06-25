@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CartApp</string>
+
+    
+<string name="facebook_app_id">2504897666364325</string>
+<string name="fb_login_protocol_scheme">fb2504897666364325</string>
+<string name="facebook_client_token">1af51367811935d50e1b013050eda7a7</string>
+
+
+</resources>

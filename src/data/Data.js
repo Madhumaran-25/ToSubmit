@@ -5,7 +5,8 @@ const loginData = [
       placeholder: 'Enter your username',
       regex: /^[a-zA-Z0-9]{5,15}$/,
       secureTextEntry: false,
-      keyboardType: 'default'
+      keyboardType: 'default',
+      errorMessage: ''
  },
  {
       id: 2,
@@ -13,7 +14,8 @@ const loginData = [
       placeholder: 'Enter your password',
       regex: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
       secureTextEntry: true,
-      keyboardType: 'password'
+      keyboardType: 'password',
+      errorMessage: ''
  },
 ]
 
@@ -26,7 +28,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid Name'
   },
   {
     id: 2,
@@ -36,7 +39,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid Username'
   },
   {
     id: 3,
@@ -46,7 +50,8 @@ const textInputData = [
     secureTextEntry: true,
     keyboardType: 'numeric',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid password'
   },
   {
     id: 4,
@@ -56,7 +61,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'numeric',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid mobile'
   },
   {
     id: 5,
@@ -66,7 +72,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'email-address',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid email'
   },
   {
     id: 6,
@@ -76,7 +83,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid residence'
   },
   {
     id: 7,
@@ -86,7 +94,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid city'
   },
   {
     id: 8,
@@ -96,7 +105,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid state'
   },
   {
     id: 9,
@@ -106,7 +116,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid country'
   },
   {
     id: 10,
@@ -116,7 +127,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'numeric',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid Zipcode'
   },
   {
     id: 11,
@@ -126,7 +138,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid company'
   },
   {
     id: 12,
@@ -136,7 +149,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid job title'
   },
   {
     id: 13,
@@ -146,7 +160,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid bio'
   },
   {
     id: 14,
@@ -156,7 +171,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid website'
   },
   {
     id: 15,
@@ -166,7 +182,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid linkedIn'
   },
   {
     id: 16,
@@ -176,7 +193,8 @@ const textInputData = [
     secureTextEntry: false,
     keyboardType: 'default',
     value: '',
-    isValid: true
+    isValid: true,
+    errorMessage: 'Invalid Twitter'
   },
 ];
 

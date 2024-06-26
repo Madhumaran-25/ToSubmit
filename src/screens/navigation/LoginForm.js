@@ -6,26 +6,42 @@ import {
   View,
   Platform,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {strings, textInputData} from '../../data/Data';
+import { updateFormData } from '../../redux/formDataSlice';
 import TextInputOne from '../../components/TextInputOne';
 import CustomButton from '../../components/CustomButton';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginForm = () => {
   const [inputs, setInputs] = useState(textInputData);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [isCurrentInputValid, setIsCurrentInputValid] = useState(false);
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+
+
 
   const handleChange = (id, text) => {
     setInputs(prevInputs =>
-      prevInputs.map(input =>
-        input.id === id
-          ? {
-              ...input,
-              value: text,
-              isValid: input.regex.test(text),
-            }
-          : input,
-      ),
+      prevInputs.map(input => {
+        if (input.id === id) {
+          const isValid = input.regex.test(text);
+          const errorMessage = isValid ? '' : 'Invalid input';
+          return { ...input, value: text, isValid, errorMessage };
+        }
+        return input;
+      })
     );
+  };
+
+  const handleSave = () => {
+    inputs.forEach(({ id, value, isValid }) => {
+      const { header } = textInputData.find(input => input.id === id);
+      dispatch(updateFormData({ id, header, data: { value, isValid } }));
+    });
+    navigation.navigate('HomePage');
   };
 
   return (
@@ -41,13 +57,14 @@ const LoginForm = () => {
             id,
             header,
             regex,
-            onChangeText,
             secureTextEntry,
             keyboardType,
             placeholder,
             value,
             isValid,
+            errorMessage
           }) => (
+            <View key={id}>
             <TextInputOne
               key={id}
               header={header}
@@ -55,18 +72,21 @@ const LoginForm = () => {
               regex={regex}
               value={value}
               keyboardType={keyboardType}
-              onChangeText={text => handleChange(id, text)}
+              onChangeText={text => handleChange(id, text, isValid)}
               isValid={isValid}
               secureTextEntry={secureTextEntry}
             />
+            {!isValid && <Text style={styles.errorText}>{errorMessage}</Text>}
+            </View>
           ),
         )}
-
+        
         <CustomButton
           title={strings.save}
           style={{marginBottom: 20}}
-          onPress={() => console.log('Saved')}
+          onPress={handleSave}
         />
+        
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -80,5 +100,10 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     marginTop: 10,
-  }
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 12,
+    marginLeft: 10,
+  },
 });

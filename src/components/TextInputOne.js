@@ -1,12 +1,8 @@
 import React, {useState} from 'react';
 import { View, TextInput, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const TextInputOne = ({ header, value, secureTextEntry, keyboardType, regex, onChangeText, placeholder, style, ...props }) => {
+const TextInputOne = ({ header, value, secureTextEntry, keyboardType, regex, onChangeText, placeholder, style,  ...props }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(!secureTextEntry);
-
-  const handleChangeText = (text) => {
-      onChangeText(text); 
-  };
   
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);  
@@ -18,7 +14,7 @@ const TextInputOne = ({ header, value, secureTextEntry, keyboardType, regex, onC
       <TextInput
         style={styles.input}
         value={value}
-        onChangeText={handleChangeText}
+        onChangeText={onChangeText}
         placeholder={placeholder}
         keyboardType={keyboardType}
         secureTextEntry={secureTextEntry && !isPasswordVisible}

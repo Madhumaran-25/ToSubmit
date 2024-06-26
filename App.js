@@ -8,6 +8,7 @@ import HomePage from './src/screens/navigation/HomePage';
 import store from './src/redux/store';
 import AuthLoadingScreen from './src/screens/AuthLoadingScreen';
 import SplashScreen from 'react-native-splash-screen';
+import LoginForm from './src/screens/navigation/LoginForm';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ const App = () => {
         <Stack.Navigator screenOptions={{headerShown:false}} >
         <Stack.Screen name="AuthLoading" component={AuthLoadingScreen}/>
           <Stack.Screen name='Login' component={Login}/>
+          <Stack.Screen name='LoginForm' component={LoginForm}/>
           <Stack.Screen name='HomePage' component={HomePage}/>
         </Stack.Navigator>
     </NavigationContainer>

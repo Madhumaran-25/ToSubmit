@@ -4,8 +4,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../BottomTab/Home';
 import Products from '../BottomTab/Products';
 import CartPage from '../BottomTab/cart';
-import LoginForm from '../BottomTab/LoginForm';
+
 import { strings } from '../../data/Data';
+import About from '../BottomTab/About';
 
 const Tab = createBottomTabNavigator();
 
@@ -71,8 +72,8 @@ const HomePage = () => (
         }}
       />
       <Tab.Screen
-        name="LoginForm"
-        component={LoginForm}
+        name="About"
+        component={About}
         options={{
           tabBarIcon: ({focused}) => (
             <View>

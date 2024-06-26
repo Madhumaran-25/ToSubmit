@@ -30,7 +30,7 @@ const Login = ({navigation}) => {
   });
 
   const handleLogin = () => {
-    navigation.navigate('HomePage');
+    navigation.navigate('LoginForm');
   };
 
 
@@ -114,12 +114,13 @@ const Login = ({navigation}) => {
       <Image style={styles.img} source={require('../images/login_image.png')}/>
       </View>
         
-        {inputs.map(({ id, header, secureTextEntry, placeholder, value, isValid }) => (
+        {inputs.map(({ id, header, keyboardType, secureTextEntry, placeholder, value, isValid }) => (
         <TextInputOne
           key={id}
           header={header}
           placeholder={placeholder}
           value={value}
+          keyboardType={keyboardType}
           onChange={(text) => handleChange(id, text)}
           isValid={isValid}
           secureTextEntry={secureTextEntry}
